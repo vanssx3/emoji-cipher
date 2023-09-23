@@ -38,6 +38,7 @@ function createEncryptionInput(){
 //User inputs a string of stupid emojis to be decrypted
 function createDecryptionInput(){
     userInput = prompt ("Enter a string of emojis to be decrypted - Supported emojis include:\n😦👶😭😈🤯🍉☠️🔥🧐🤤🥶😜🤑😡😮🐱🤔🥹😴🫠🥳🥸🥵🤬👽😸🫥👿😳🥺🤧🤢🤭🥲😂🤐😶‍🌫️");
+    console.log(userInput);
     if(isDecryptionValid() == true){
         decrypt();
     } else{
@@ -49,9 +50,7 @@ function createDecryptionInput(){
 function isEncryptionValid(): any { 
     for(let i = 0; i < userInput.length; i++){
         if(alphabetLetters.indexOf(userInput[i]) == -1){
-            if(userInput[i] != " "){
-                return false;
-            }
+            return false;
         }
     }
     return true;
@@ -59,11 +58,10 @@ function isEncryptionValid(): any {
 
 //Checks if the decryption string inputted is valid, returns true if valid
 function isDecryptionValid(): any { 
-    for(let i = 0; i < userInput.length; i++){
-        if(alphabetEmojis.indexOf(userInput[i]) == -1){
-            if(userInput[i] != " "){
-                return false;
-            }
+    for(let i = 0; i < (userInput.length / 2); i++){
+        let j:number = i * 2;
+        if(alphabetEmojis.indexOf(userInput.slice(j, (j + 2))) == -1){
+            return false;
         }
     }
     return true;
@@ -73,7 +71,9 @@ function isDecryptionValid(): any {
 function encrypt(){
     let encryptedString:string = "";
     for(let i = 0; i < userInput.length; i++){
-        encryptedString += alphabetEmojis[alphabetLetters.indexOf[i]];
+        let char:string = userInput[i];
+        let place:number = alphabetLetters.indexOf(char);
+        encryptedString += alphabetEmojis[place];
     }
     console.log(encryptedString);
 }
@@ -81,8 +81,12 @@ function encrypt(){
 //Inputted string is decrypted and printed to console
 function decrypt(){
     let decryptedString:string = "";
-    for(let i = 0; i < userInput.length; i++){
-        decryptedString += alphabetLetters[alphabetEmojis.indexOf[i]];
+    for(let i = 0; i < (userInput.length / 2); i++){
+        let j:number = i * 2;
+        let char:string = userInput.slice(j, (j + 2));
+        let place:number = alphabetEmojis.indexOf(char);
+        decryptedString += alphabetLetters[place];
+
     }
     console.log(decryptedString);
 }
