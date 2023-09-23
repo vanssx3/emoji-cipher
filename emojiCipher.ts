@@ -19,8 +19,8 @@ function chooseType(){
     }   else if(selection == 2){
         createDecryptionInput();
     }  else{
-        console.log("smh enter a VALID number");
-        chooseType();
+        console.log("Selection Failed - Number Invalid");
+        setTimeout(chooseType, 1);
     }  
 }
 
@@ -31,7 +31,8 @@ function createEncryptionInput(){
     if(isEncryptionValid() == true){
         encrypt();
     } else{
-        createEncryptionInput();
+        console.log("Encryption Failed - String Invalid");
+        setTimeout(createEncryptionInput, 1);
     }
 }
 
@@ -42,7 +43,8 @@ function createDecryptionInput(){
     if(isDecryptionValid() == true){
         decrypt();
     } else{
-        createDecryptionInput();
+        console.log("Decryption Failed - String Invalid");
+        setTimeout(createDecryptionInput, 1);
     }
 }
 
@@ -75,7 +77,7 @@ function encrypt(){
         let place:number = alphabetLetters.indexOf(char);
         encryptedString += alphabetEmojis[place];
     }
-    console.log(encryptedString);
+    console.log("Encrypted String: " + encryptedString);
 }
 
 //Inputted string is decrypted and printed to console
@@ -88,7 +90,7 @@ function decrypt(){
         decryptedString += alphabetLetters[place];
 
     }
-    console.log(decryptedString);
+    console.log("Decrypted String: " + decryptedString);
 }
 
 
