@@ -5,7 +5,7 @@ Written horribly in TypeScript.
 
 You actually have to have some sort of emojis configured on your system for this to work properly.
 Most systems should already have some type of emojis installed but if they don't then I'd recommend
-installing the noto-fonts-emoji for your distro.
+installing the noto-fonts-emoji package for your distro.
 
 
 By default the supported characters include:
