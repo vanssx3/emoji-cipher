@@ -15,7 +15,7 @@ To add or change supported characters, add a different character to the index of
 that corresponds with the index of the emoji in alphabetEmojis[] you want it to encrypt to.
 
 
-By defualt the supported emojis include:
+By default the supported emojis include:
 "😦👶😭😈🤯🍉☠️🔥🧐🤤🥶😜🤑😡😮🐱🤔🥹😴🫠🥳🥸🥵🤬👽😸🫥👿😳🥺🤧🤢🤭🥲😂🤐😶‍🌫️"
 To add or change supported emojis, add a different emoji to index of alphabetEmojis[] that
 corresponds with the index of the character in alphabetLetters[] you want it to
